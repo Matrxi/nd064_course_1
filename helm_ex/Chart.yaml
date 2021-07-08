@@ -1,0 +1,9 @@
+apiVersion: v1
+name: nginx-deployment
+description: Install Nginx deployment using mutiple yaml
+keywords:
+-nginx
+version: 1.0.0
+maintainers:
+-name : Rishabh
+email : rishabhaggarwal005@gmai.com
