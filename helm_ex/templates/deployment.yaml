@@ -9,7 +9,7 @@ metadata:
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
-    matchLables:
+    matchLabels:
       app: nginx
       tag: alpine
   strategy:
