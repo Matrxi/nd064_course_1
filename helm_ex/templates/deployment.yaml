@@ -5,27 +5,27 @@ metadata:
 		app: nginx
 		tag: alpine
 	name: nginx-alpine
-	namespace: {{ .Values.namespace.name}}
+	namespace: {{ .Values.namespace.name }}
 spec:
-	replicas: {{.Values.replicaCount}}
+	replicas: {{ .Values.replicaCount }}
 	selector:
 		matchLables:
-			app:nginx
-			tag:alpine
+			app: nginx
+			tag: alpine
 	strategy:
 		rollingUpdate:
-			maxSurge:25%
-			maxUnavailable:25%
+			maxSurge: 25%
+			maxUnavailable: 25%
 		type: RollingUpdate
 	template:
 		metadata:
 		labels:
-			app:nginx
-			tag:alpine
+			app: nginx
+			tag: alpine
 	spec:
 		containers:
-		- image : {{.Values.image.repository}}:{{.Values.image.tag}}
-		imagePullPolicy : {{.Values.image.pullPolicy}}
+		- image : {{ .Values.image.repository}}:{{.Values.image.tag }}
+		imagePullPolicy : {{ .Values.image.pullPolicy }}
 		name: nginx-alpine
 	resources:
 	{{toYaml .Values.resources | indent 12 }}
