@@ -1,0 +1,9 @@
+apiVersion: v1
+name: techtrends
+description: TechTrends project
+keywords:
+- techtrends
+version: 1.0.0
+maintainers:
+- name: matrxi
+  email: rishabhaggarwal005@gmail.com

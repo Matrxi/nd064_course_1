@@ -1,0 +1,36 @@
+namespace:
+  name: prod
+
+service:
+  port: 7111
+  protocol: TCP
+  targetPort: 4111
+  type : ClusterIP
+
+
+image:
+  repository: matrxi/techtrends
+  tag: latest
+  imagePullPolicy : Always
+
+replicaCount: 5
+
+
+resources:
+  requests:
+    cpu: 350m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi
+
+containerPort : 3111
+
+
+readinessProbe:
+  httpGet:
+    path: /healthz
+
+livenessProbe:
+  httpGet:
+    path: /healthz

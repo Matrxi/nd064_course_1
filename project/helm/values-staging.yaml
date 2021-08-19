@@ -1,0 +1,36 @@
+namespace:
+  name: staging
+
+service:
+  port: 5111
+  protocol: TCP
+  targetPort: 4111
+  type : ClusterIP
+
+
+image:
+  repository: matrxi/techtrends
+  tag: latest
+  imagePullPolicy : IfNotPresent
+
+replicaCount: 3
+
+
+resources:
+  requests:
+    cpu: 300m
+    memory: 90Mi
+  limits:
+    cpu: 500m
+    memory: 128Mi
+
+containerPort : 3111
+
+
+readinessProbe:
+  httpGet:
+    path: /healthz
+
+livenessProbe:
+  httpGet:
+    path: /healthz
